@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" id="cm4-o6-G3J">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UCF-Qd-hVP">
                             <connections>
-                                <segue destination="RkS-7q-4d9" kind="push" id="YkI-o8-AyI"/>
+                                <segue destination="RkS-7q-4d9" kind="push" identifier="messagesToNewMessageSegueID" id="YkI-o8-AyI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="707" y="140"/>
         </scene>
-        <!--View Controller-->
+        <!--New-Message View Controller-->
         <scene sceneID="t8V-DO-7aF">
             <objects>
-                <viewController id="RkS-7q-4d9" sceneMemberID="viewController">
+                <viewController id="RkS-7q-4d9" userLabel="New-Message View Controller" customClass="FISNewMessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ECT-Hs-S5v"/>
                         <viewControllerLayoutGuide type="bottom" id="k7P-ZO-B73"/>
@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ge8-lF-rWd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add New Message here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ge8-lF-rWd">
                                 <rect key="frame" x="16" y="106" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -79,8 +79,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="85b-jf-nsT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8mw-PK-Xgy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8mw-PK-Xgy">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="RkS-7q-4d9" id="P7C-4w-rLn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addNewMessageTxF" destination="ge8-lF-rWd" id="FMq-fW-5fD"/>
+                        <outlet property="saveButton" destination="8mw-PK-Xgy" id="CeS-Hw-XGW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBx-Q5-U3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
